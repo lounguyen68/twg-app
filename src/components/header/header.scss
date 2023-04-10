@@ -1,0 +1,33 @@
+@use "../../scss" as *;
+
+.header {
+    background-color: $white;
+    
+    &__logo img {
+        max-width: 150px;
+        max-height: 150px;
+    }
+
+    &__menu {
+        @include flex(center, center);
+        
+        &__link {
+            font-family: $font-family;
+            font-size: 20px;
+            font-weight: 700;
+            color: $txt-color;
+        }
+        &__link:hover {
+            color: $black;
+            opacity: 0.5;
+        }
+
+        & > * ~ * {
+            margin-left: 2rem;
+        }
+
+        @include mobile {
+            display:none;
+        }
+    }
+}
